@@ -1,6 +1,6 @@
 package my.company.front.controller;
 
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import my.company.front.dto.DeveloperDto;
 import my.company.front.model.Developer;
@@ -17,25 +17,25 @@ public class DeveloperController {
     private final DeveloperService developerService;
 
     @PostMapping
-    @ApiOperation("Добавление девелопера")
+    @Operation(description = "Добавление девелопера")
     public List<Developer> addDeveloper(@RequestBody DeveloperDto dto) {
         return developerService.addDeveloper(dto);
     }
 
     @GetMapping
-    @ApiOperation("Получение девепоперов")
+    @Operation(description = "Получение девепоперов")
     public List<Developer> getDevelopers(@RequestParam(required = false) String day) {
         return developerService.getDevelopers(day);
     }
 
     @GetMapping("/{id}")
-    @ApiOperation("Получение девепопера по ид")
+    @Operation(description = "Получение девепопера по ид")
     public Developer getDeveloper(@PathVariable UUID id) {
         return developerService.getDeveloper(id);
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation("Удаление девелопера")
+    @Operation(description = "Удаление девелопера")
     public List<Developer> removeDeveloper(@PathVariable UUID id) {
         return developerService.removeDeveloper(id);
     }

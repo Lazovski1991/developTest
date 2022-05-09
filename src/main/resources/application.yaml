@@ -3,11 +3,6 @@ server:
   servlet:
     context-path: /api/front/
 
-spring:
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-
 management:
   endpoints:
     web:
@@ -20,3 +15,7 @@ management:
     distribution:
       percentiles-histogram:
         "[http.server.requests]" : true
+springdoc:
+  packages-to-scan: my.company.front
+  swagger-ui:
+    path: /swagger-ui.html
