@@ -24,6 +24,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.7'
+    implementation 'io.micrometer:micrometer-registry-prometheus:1.8.5'
 }
 
 tasks.named('test') {

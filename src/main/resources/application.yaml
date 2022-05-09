@@ -1,9 +1,22 @@
 server:
   port: 8080
   servlet:
-    context-path: /api/front
+    context-path: /api/front/
 
 spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]" : true
