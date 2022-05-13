@@ -26,7 +26,7 @@ public class DeveloperServiceImpl implements DeveloperService {
                 .setPatronymic(developerDto.getPatronymic())
                 .setStack(developerDto.getStack())
                 .setPosition(developerDto.getPosition())
-                .setDaysWorkList(DaysWeek.convertList(developerDto.getDaysWorkList()));
+                .setDaysWorkList(developerDto.getDaysWorkList());
 
         return repo.addDeveloper(developer);
     }

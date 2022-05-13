@@ -1,6 +1,7 @@
 package my.company.front.dto;
 
 import lombok.Data;
+import my.company.front.model.DaysWeek;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public class DeveloperDto {
     private List<String> stack;
     private int age;
     private int experience;
-    private List<String> daysWorkList;
+    private List<DaysWeek> daysWorkList;
 }

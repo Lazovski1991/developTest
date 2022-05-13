@@ -3,11 +3,23 @@ server:
   servlet:
     context-path: /api/front/
 
+spring:
+  application:
+    name: front-service
+  profiles:
+    default: dev
+
+logging:
+  config: classpath:logback-spring.xml
+  service:
+    enable: true
+
 management:
   endpoints:
     web:
       exposure:
-        include: health, prometheus
+        include: [health, info, threaddump, heapdump, prometheus]
+#      base-path: /http
   metrics:
     export:
       prometheus:
@@ -15,6 +27,14 @@ management:
     distribution:
       percentiles-histogram:
         "[http.server.requests]" : true
+    use-global-registry: false
+    tags:
+      application: ${spring.application.name}
+#  server:
+#    port: 9090
+  endpoint:
+    health:
+      show-details: ALWAYS
 springdoc:
   packages-to-scan: my.company.front
   swagger-ui:

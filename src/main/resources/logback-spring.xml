@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_FILE" value="log_template"/>
+    <property name="LOG_DIR" value="Log"/>
+
+    <include resource="my.company/logback-default.xml"/>
+</configuration>

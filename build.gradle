@@ -16,6 +16,7 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -26,6 +27,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.8'
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.7'
     implementation 'io.micrometer:micrometer-registry-prometheus:1.8.5'
+    implementation 'com.github.Lazovski1991:request-logger:2.1.0'
 }
 
 tasks.named('test') {
