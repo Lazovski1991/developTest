@@ -28,6 +28,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.7'
     implementation 'io.micrometer:micrometer-registry-prometheus:1.8.5'
     implementation 'com.github.Lazovski1991:request-logger:2.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.6.7'
+    implementation 'org.keycloak:keycloak-spring-boot-starter:18.0.0'
+
 }
 
 tasks.named('test') {

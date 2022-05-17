@@ -39,3 +39,28 @@ springdoc:
   packages-to-scan: my.company.front
   swagger-ui:
     path: /swagger-ui.html
+
+keycloak:
+  realm: "template"
+  auth-server-url: https://javaforall.tech/oauth/auth/
+  ssl-required: external
+  resource: "template-service"
+  credentials:
+    secret: 94071761-d448-4c0b-bdbd-3a53b7e0af2e
+  use-resource-role-mappings: true
+  bearer-only: true
+
+---
+spring:
+  profiles:
+    active: prod
+
+keycloak:
+  realm: ${KEYCLOAK_REALM}
+  auth-server-url: ${KEYCLOAK_URL}
+  ssl-required: external
+  resource: ${KEYCLOAK_CLIENT}
+  credentials:
+    secret: ${KEYCLOAK_SECRET}
+  use-resource-role-mappings: true
+  bearer-only: true
