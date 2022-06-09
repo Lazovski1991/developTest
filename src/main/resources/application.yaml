@@ -13,6 +13,10 @@ logging:
   config: classpath:logback-spring.xml
   service:
     enable: true
+    auth:
+      type: keycloak
+      token-header-name: Authorization
+      field-name-token: [ "userId", "username", "email" ]
 
 management:
   endpoints:
